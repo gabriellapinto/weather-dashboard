@@ -10,3 +10,19 @@ header {
 header h1 {
     padding-top: 12px;
 }
+
+#side-panel {
+    padding: 20px;
+    width: 20%;
+}
+
+#search-form {
+    padding-bottom: 10px;
+    border-bottom: 2px solid lightgray;
+}
+
+#search-btn {
+    margin-top: 10px;
+    width: 100%;
+
+}
