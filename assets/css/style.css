@@ -11,9 +11,9 @@ header h1 {
     padding-top: 12px;
 }
 
-#side-panel {
-    padding: 20px;
-    width: 20%;
+#body-container {
+    display: flex;
+    flex-direction: row;
 }
 
 #search-form {
@@ -21,8 +21,13 @@ header h1 {
     border-bottom: 2px solid lightgray;
 }
 
-#search-btn {
+.btn {
     margin-top: 10px;
     width: 100%;
+}
 
+#clear-btn {
+    background-color: lightgray;
+    border-color: lightgray;
+    color: gray;
 }
