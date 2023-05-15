@@ -5,29 +5,10 @@ header {
     border-bottom: 2px solid #4a95ff;
     text-shadow: 1px 4px 4px rgba(74, 149, 255);
     text-align: center;
+    font-size: 35px;
 }
 
 header h1 {
     padding-top: 12px;
 }
 
-#body-container {
-    display: flex;
-    flex-direction: row;
-}
-
-#search-form {
-    padding-bottom: 10px;
-    border-bottom: 2px solid lightgray;
-}
-
-.btn {
-    margin-top: 10px;
-    width: 100%;
-}
-
-#clear-btn {
-    background-color: lightgray;
-    border-color: lightgray;
-    color: gray;
-}

@@ -3,6 +3,13 @@ var currWeatherDiv = $("#currentWeather");
 var forecastDiv = $("#weatherForecast");
 var citiesArray;
 
+if (localStorage.getItem("localWeatherSearches")) {
+    citiesArray = JSON.parse(localStorage.getItem("localWeatherSearches"));
+    writeSearchHistory(citiesArray);
+} else {
+    citiesArray = [];
+};
+
 function returnCurrentWeather(cityName) {
     let queryURL = `https://api.openweathermap.org/data/2.5/weather?q=${cityName}&units=metric&APPID=${apiKey}`;
   
@@ -17,8 +24,34 @@ function returnCurrentWeather(cityName) {
         <p>Humidity: ${response.main.humidity}%</p>
         <p>Wind Speed: ${response.wind.speed} m/s</p>
         `, returnUVIndex(response.coord))
+        createHistoryButton(response.name);
     });
   };
+
+  function createHistoryButton(cityName) {
+    
+    var citySearch = cityName.trim();
+    var buttonCheck = $(`#previousSearch > BUTTON[value='${citySearch}']`);
+    if (buttonCheck.length == 1) {
+      return;
+    }
+    
+    if (!citiesArray.includes(cityName)){
+        citiesArray.push(cityName);
+        localStorage.setItem("localWeatherSearches", JSON.stringify(citiesArray));
+    }
+  
+    $("#previousSearch").prepend(`
+    <button class="btn btn-dark cityHistoryBtn" value='${cityName}'>${cityName}</button>
+    `);
+  }
+
+  function writeSearchHistory(array) {
+    $.each(array, function(i) {
+        createHistoryButton(array[i]);
+    })
+  }
+  
 
 
 
