@@ -12,3 +12,4 @@ The objective of this project was to make a responsive weather application that 
 
 ## Link to Live Application
 https://gabriellapinto.github.io/weather-dashboard/
+![homepage](https://github.com/gabriellapinto/weather-dashboard/assets/97854086/d5e1816b-e2e4-4877-b579-fbe87738938b)
